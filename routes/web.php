@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['prefix'=>'admin'],function(){
+	Route::get('/', 'FoodController@getWelcome');
+    Route::group(['prefix'=>'food'],function(){
+    	Route::get('danhsach', 'FoodController@getDanhSach')->name('danhsachmonan');
+    });
+});
