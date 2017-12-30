@@ -10,8 +10,12 @@
     <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
     <link rel="shortcut icon" href="adminAssets/img/favicon.html">
+    <base href="{{ asset('') }}" >
 
     <title>@yield('title')</title>
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
 
      <link href="adminAssets/css/bootstrap.min.css" rel="stylesheet">
     <link href="adminAssets/css/bootstrap-reset.css" rel="stylesheet">
@@ -28,6 +32,8 @@
     <link href="adminAssets/css/style.css" rel="stylesheet">
     <link href="adminAssets/css/style-responsive.css" rel="stylesheet" />
 
+    <script type="text/javascript" src="adminAssets/assets/ckeditor/ckeditor.js"></script>
+    
 
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
