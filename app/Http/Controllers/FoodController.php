@@ -24,13 +24,14 @@ class FoodController extends Controller
     public function postThem(Request $request){
 
     	$this->validate($request,[
-    		'TenMonAn' => 'required',
+    		'TenMonAn' => 'required|unique:foods,name',
     		'NguyenLieu' => 'required',
     		'ChiTiet' => 'required',
     		'HinhMonAn' => 'required|image'
     	], 
     	[
     		'TenMonAn.required'=>'Tên món ăn không được để trống.',
+            'TenMonAn.unique'=>'Tên món ăn đã có trong cơ sở dữ liệu.',
     		'NguyenLieu.required'=>'Bạn cần nhập nguyên liệu.',
     		'ChiTiet.required'=>'Bạn cần nhập chi tiết món ăn.',
     		'HinhMonAn.required'=>'Bạn chưa chọn hình món ăn.',

@@ -15,13 +15,13 @@
                     <!-- user login dropdown start-->
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <img alt="" src="adminAssets/img/photos/user3.png" height="40px">
-                            <span class="username">Vuong Anh Khoa</span>
+                            <img alt="" src="adminAssets/img/photos/{{ Auth::user()->image }}" height="40px">
+                            <span class="username">{{ Auth::user()->fullname }}</span>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout" style="width: 160px !important">
                             <div class="log-arrow-up"></div>
-                            <li><a href="login.html"><i class="fa fa-key"></i> Đăng xuất</a></li>
+                            <li><a href="{{ route('logout') }}"><i class="fa fa-key"></i> Đăng xuất</a></li>
                         </ul>
                     </li>
                     <!-- user login dropdown end -->

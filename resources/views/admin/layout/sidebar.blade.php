@@ -26,8 +26,8 @@
                           <span>Loại món ăn</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="inbox.html">Thêm loại món</a></li>
-                          <li><a  href="inbox_details.html">Danh sách loại</a></li>
+                          <li><a  href="{{ route('themloaimonan') }}">Thêm loại món</a></li>
+                          <li><a  href="{{ route('danhsachloaimonan') }}">Danh sách loại</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -36,12 +36,12 @@
                           <span>Hình món ăn</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="product_list.html">Thêm hình món ăn</a></li>
-                          <li><a  href="product_details.html">Danh sách hình</a></li>
+                          <li><a  href="{{ route('themhinh') }}">Thêm hình món ăn</a></li>
+                          <li><a  href="{{ route('danhsachhinh') }}">Danh sách hình</a></li>
                       </ul>
                   </li>
                   <li>
-                      <a href="google_maps.html" >
+                      <a href="admin/binhluan" >
                           <i class="fa fa-comments-o"></i>
                           <span>Xem bình luận</span>
                       </a>
@@ -53,8 +53,8 @@
                           <span>Quản lý</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="product_list.html">Thêm người quản trị</a></li>
-                          <li><a  href="product_details.html">Danh sách quản trị</a></li>
+                          <li><a  href="{{ route('themnguoiquantri') }}">Thêm người quản trị</a></li>
+                          <li><a  href="{{ route('danhsachnguoiquantri') }}">Danh sách quản trị</a></li>
                       </ul>
                   </li>
 

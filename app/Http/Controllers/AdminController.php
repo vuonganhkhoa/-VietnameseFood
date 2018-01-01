@@ -8,24 +8,39 @@ use Auth;
 
 class AdminController extends Controller
 {
-    public function getWelcome(){
-    	$user = User::find(42);
-    	return view('admin.page.welcome', compact('user'));
-    }
+
     public function getDangNhap(){
     	return view('admin.login');
     }
+
     public function postDangNhap(Request $request){
-    	$login = array(
+    	$loginEmail = array(
             'email' => $request->email,
             'password' => $request->password,
-            //'role'=> 'admin'
         );
-        if(Auth::attempt($login)){
+        $loginUsername = array(
+            'username' => $request->email,
+            'password' => $request->password,
+        );
+        if(Auth::attempt($loginEmail)){
+            return redirect()->route('welcome');
+        }
+        elseif(Auth::attempt($loginUsername)){
             return redirect()->route('welcome');
         }
         else{
-        	echo "No";
+        	return redirect()->back()->with('error', 'Tên hoặc mật khẩu không đúng.');
         }
+    }
+
+    public function getDangXuat(){
+        Auth::logout();
+        return redirect()->route('login');
+    }
+
+    public function getWelcome(){
+        $id = Auth::id();
+        $user = User::find($id);
+        return view('admin.page.welcome', compact('user'));
     }
 }

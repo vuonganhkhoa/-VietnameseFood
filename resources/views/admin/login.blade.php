@@ -42,7 +42,7 @@
             <form class="form-signin" method="post" action="{{ route('login') }}">
             {{csrf_field()}}
                 <span id="reauth-email" class="reauth-email"></span>
-                <input type="email" name="email" class="form-control" placeholder="Nhập email" required autofocus>
+                <input type="text" name="email" class="form-control" placeholder="Nhập email hoặc username" required autofocus>
                 <input type="password" name="password" class="form-control" placeholder="Nhập password" required>
                 
                 <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" name="login">Đăng nhập</button>
@@ -50,11 +50,20 @@
             <a href="#" class="forgot-password">
                 Quên mật khẩu?
             </a>
+            @if(session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+            @endif
         </div><!-- /card-container -->
+        
     </div><!-- /container -->
     <!-- js placed at the end of the document so the pages load faster -->
     <script src="adminassets/js/jquery.js"></script>
     <script src="adminassets/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $('div.alert').delay(5000).slideUp();
+    </script>
     
   </body>
 
