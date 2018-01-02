@@ -3,7 +3,7 @@
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="{{route('welcome')}}" class="logo">VN<span>FOOD</span></a>
+            <a href="{{route('welcome')}}" class="logo">WORLD<span>FOOD</span></a>
             <!--logo end-->
 
             <div class="top-nav ">

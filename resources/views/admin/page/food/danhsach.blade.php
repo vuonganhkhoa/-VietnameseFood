@@ -24,7 +24,7 @@
 				                <th>STT</th>
 				                <th>Tên món ăn</th>
 				                <th>Loại món ăn</th>
-				                <th>Lượt xem</th>
+				                <th>Xuất xứ</th>
 				                <th>Hình món ăn</th>
 				                <th>Xóa</th>
 				                <th>Cập nhật</th>
@@ -35,7 +35,7 @@
 				                <th>STT</th>
 				                <th>Tên món ăn</th>
 				                <th>Loại món ăn</th>
-				                <th>Lượt xem</th>
+				                <th>Xuất xứ</th>
 				                <th>Hình món ăn</th>
 				                <th>Xóa</th>
 				                <th>Cập nhật</th>
@@ -49,7 +49,7 @@
 				                <td>{{ $stt }}</td>
 				                <td>{{ $food->name }}</td>
 				                <td>{{ ($food->FoodType->name) }}</td>
-				                <td>{{ $food->soluotxem }}</td>
+				                <td>{{ $food->FoodCountry->name }}</td>
 				                <td><img height="100px" src="adminAssets/img/hinh_mon_an/{{ $food->image }}" alt=""></td>
 				                <td width="80px" style="font-size: 25px" class="text-center"><a onclick="return XacNhanXoa('Bạn có chắc muốn xóa?')" href="admin/food/xoa/{{ $food->id }}"><i class="fa fa-trash-o fa-fw"></i></a></td>
 				                <td width="80px" style="font-size: 25px" class="text-center"><a href="admin/food/sua/{{ $food->id }}"><i class="fa fa-pencil fa-fw"></i></a></td>

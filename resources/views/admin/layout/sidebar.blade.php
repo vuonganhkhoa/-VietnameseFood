@@ -32,6 +32,16 @@
                   </li>
                   <li class="sub-menu">
                       <a href="javascript:;" >
+                          <i class="fa fa-globe"></i>
+                          <span>Món ăn thế giới</span>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="{{ route('themmonanthegioi') }}">Thêm nước</a></li>
+                          <li><a  href="{{ route('danhsachmonanthegioi') }}">Danh sách nước</a></li>
+                      </ul>
+                  </li>
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
                           <i class="fa fa-picture-o"></i>
                           <span>Hình món ăn</span>
                       </a>

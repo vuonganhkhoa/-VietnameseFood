@@ -22,6 +22,19 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
+                                                    <label class="control-label">Chọn nước</label>
+                                                    <select class="form-control" name="NuocMonAn" id="NuocMonAn">
+                                                      @foreach($foodCountry as $cou)
+                                                        <option @if($cou->id == $food->id_country) {{ 'selected' }} @endif value="{{$cou->id}}">{{$cou->name}}</option>
+                                                      @endforeach
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
                                                     <label class="control-label">Chọn loại món ăn</label>
                                                     <select class="form-control" name="LoaiMonAn" id="LoaiMonAn">
                                                       @foreach($foodType as $type)

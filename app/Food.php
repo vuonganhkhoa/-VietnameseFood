@@ -13,6 +13,9 @@ class Food extends Model
     public function FoodType(){
     	return $this->belongsTo('App\FoodType', 'id_type', 'id');
     }
+    public function FoodCountry(){
+        return $this->belongsTo('App\FoodCountry', 'id_country', 'id');
+    }
     public function Comment(){
     	return $this->hasMany('App\Comment', 'id_food', 'id');
     }

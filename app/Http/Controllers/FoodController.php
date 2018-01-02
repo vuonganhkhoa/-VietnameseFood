@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Food;
 use App\FoodType;
+use App\FoodCountry;
 use App\PageUrl;
 use App\Functions;
 
@@ -12,13 +13,14 @@ class FoodController extends Controller
 {
   
     public function getDanhSach(){
-    	$foods = Food::with('FoodType')->get();
+    	$foods = Food::with('FoodType')->with('FoodCountry')->orderBy('id', 'DESC')->get();
     	return view('admin.page.food.danhsach', compact('foods'));
     }
 
     public function getThem(){
     	$foodType = FoodType::all();
-    	return view('admin.page.food.them', compact('foodType'));
+        $foodCountry = FoodCountry::all();
+    	return view('admin.page.food.them', compact('foodType', 'foodCountry'));
     }
 
     public function postThem(Request $request){
@@ -45,6 +47,7 @@ class FoodController extends Controller
 
     	$food = new Food;
     	$food->id_type = $request->LoaiMonAn;
+        $food->id_country = $request->NuocMonAn;
     	$food->id_url = $url->id;
     	$food->name = $request->TenMonAn;
     	$food->summary = $request->NguyenLieu;
@@ -78,7 +81,8 @@ class FoodController extends Controller
     public function getSua($id){
     	$food = Food::find($id);
     	$foodType = FoodType::all();
-    	return view('admin.page.food.sua', compact('food', 'foodType'));
+        $foodCountry = FoodCountry::all();
+    	return view('admin.page.food.sua', compact('food', 'foodType', 'foodCountry'));
     }
 
     public function postSua($id, Request $request){
@@ -104,6 +108,7 @@ class FoodController extends Controller
     	$url->save();
 
     	$food->id_type = $request->LoaiMonAn;
+        $food->id_country = $request->NuocMonAn;
     	$food->id_url = $url->id;
     	$food->name = $request->TenMonAn;
     	$food->summary = $request->NguyenLieu;

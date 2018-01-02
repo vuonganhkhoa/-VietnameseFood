@@ -11,9 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+#================================== ADMIN ====================================
+
+Route::get('/', 'ResController@getTrangChu')->name('home');
+
+
+
+#================================== ADMIN ====================================
+
 
 Route::get('dangnhap', 'AdminController@getDangNhap')->name('login');
 Route::post('dangnhap', 'AdminController@postDangNhap');
@@ -50,6 +55,19 @@ Route::group(['prefix'=>'admin', 'middleware'=>'auth'],function(){
 
     	Route::get('sua/{id}', 'FoodTypeController@getSua');
     	Route::post('sua/{id}', 'FoodTypeController@postSua');
+    });
+
+    Route::group(['prefix'=>'food-country'],function(){
+    	
+    	Route::get('danhsach', 'FoodCountryController@getDanhSach')->name('danhsachmonanthegioi');
+
+    	Route::get('them', 'FoodCountryController@getThem')->name('themmonanthegioi');
+    	Route::post('them', 'FoodCountryController@postThem');
+
+    	Route::get('xoa/{id}', 'FoodCountryController@getXoa');
+
+    	Route::get('sua/{id}', 'FoodCountryController@getSua');
+    	Route::post('sua/{id}', 'FoodCountryController@postSua');
     });
 
     Route::group(['prefix'=>'food-pics'],function(){
