@@ -1,4 +1,5 @@
 @extends ('res.layout.master')
+@section ('title', 'WorldFOOD')
 @section ('content')
 
         <!-- ============ About Us ============= -->
@@ -25,106 +26,118 @@
        <!-- ============ Pricing  ============= -->
 
         <section id ="pricing" class="description_content">
-        <section id="portfolio" class="portfolio">
-            <div class="pricing background_content">
-                <h1>Thể giới ẩm thực</h1>
-            </div>
-            <div class="text-content container">
-                <div class="row">
-                    <div class="main_mix_content text-center sections">
-                        <div class="main_mix_menu">
-                            <ul>
-                                <li class="btn btn-primary filter" data-filter="all">MÓN CÁ</li>
-                                <li class="btn btn-primary filter" data-filter=".cat1">MÓN THỊT</li>
-                                <li class="btn btn-primary filter" data-filter=".cat2">MÓN NƯỚC</li> 
-                                <li class="btn btn-primary filter" data-filter=".cat4">MÓN CƠM</li>
-                                <li class="btn btn-primary filter" data-filter=".cat3">MÓN TRÁNG MIỆNG</li>
-                                <li class="btn btn-primary filter" data-filter=".cat5">10 MÓN NỔI BẬT</li>
-                            </ul>
-                        </div>
-
-                        <div id="mixcontent" class="mixcontent">
-                            <div class="col-md-4 mix cat1 no-padding">
-                                <div class="single_mixi_portfolio">
-                                    <img src="resAssets/assets/images/pf1.jpg" alt="" />
-                                    <div class="mixi_portfolio_overlay">
-                                        <div class="overflow_hover_text">
-                                            <h2>INGREDIENTS</h2>
-                                            <p>ARE IMPORTANT FOR COOKING ?</p>
-                                            <a href=""><i class="lnr lnr-plus-circle"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mix cat2 no-padding">
-                                <div class="single_mixi_portfolio">
-                                    <img src="resAssets/assets/images/pf2.jpg" alt="" />
-                                    <div class="mixi_portfolio_overlay">
-                                        <div class="overflow_hover_text">
-                                            <a href=""><i class="lnr lnr-plus-circle">Com tam suon bi cha</i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mix cat1 cat4 no-padding">
-                                <div class="single_mixi_portfolio">
-                                    <img src="resAssets/assets/images/pf3.jpg" alt="" />
-                                    <div class="mixi_portfolio_overlay">
-                                        <div class="overflow_hover_text">
-                                            <h2>INGREDIENTS</h2>
-                                            <p>ARE IMPORTANT FOR COOKING ?</p>
-                                            <a href=""><i class="lnr lnr-plus-circle">Com tam suon bi cha</i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mix cat3 cat4 no-padding">
-                                <div class="single_mixi_portfolio">
-                                    <img src="resAssets/assets/images/pf4.jpg" alt="" />
-                                    <div class="mixi_portfolio_overlay">
-                                        <div class="overflow_hover_text">
-                                            <h2>INGREDIENTS</h2>
-                                            <p>ARE IMPORTANT FOR COOKING ?</p>
-                                            <a href=""><i class="lnr lnr-plus-circle"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mix cat4 no-padding">
-                                <div class="single_mixi_portfolio">
-                                    <img src="resAssets/assets/images/pf5.jpg" alt="" />
-                                    <div class="mixi_portfolio_overlay">
-                                        <div class="overflow_hover_text">
-                                            <h2>INGREDIENTS</h2>
-                                            <p>ARE IMPORTANT FOR COOKING ?</p>
-                                            <a href=""><i class="lnr lnr-plus-circle"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mix cat1 cat2 no-padding">
-                                <div class="single_mixi_portfolio">
-                                    <img src="resAssets/assets/images/pf1.jpg" alt="" />
-                                    <div class="mixi_portfolio_overlay">
-                                        <div class="overflow_hover_text">
-                                            <h2>INGREDIENTS</h2>
-                                            <p>ARE IMPORTANT FOR COOKING ?</p>
-                                            <a href=""><i class="lnr lnr-plus-circle"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio_btn_area">
-                                <a href="" class="btn btn-md">Xem thêm</a>
-                            </div>
-                            <div class="gap"></div>
-                        </div>
-                    </div>                     
+            <section id="portfolio" class="portfolio">
+                <div class="pricing background_content">
+                    <h1>Thể giới ẩm thực</h1>
                 </div>
-            </div>
+
+                <div class="text-content container">
+                    <div class="row">
+                        <div class="main_mix_content text-center sections">
+                            <div class="main_mix_menu">
+                                <ul>
+                                    <li class="navactive active btn btn-primary filter" data-filter=".cat1">MÓN SÚP</li>
+                                    <li class="btn btn-primary filter" data-filter=".cat2">MÓN THỊT</li>
+                                    <li class="btn btn-primary filter" data-filter=".cat3">MÓN XÀO</li> 
+                                    <li class="btn btn-primary filter" data-filter=".cat4">MÓN CƠM</li>
+                                    <li class="btn btn-primary filter" data-filter=".cat5">MÓN TRÁNG MIỆNG</li>
+                                    <li class="btn btn-primary filter" data-filter=".cat6">MÓN NỔI BẬT</li>
+                                </ul>
+                            </div>
+
+                            <div id="mixcontent" class="mixcontent">
+                                
+                                @foreach ($foods_soup as $food)
+                                <div class="col-md-4  mix cat1 no-padding">
+                                    <div class="single_mixi_portfolio">
+                                        <img src="adminAssets/img/hinh_mon_an/{{ $food->image }}" />
+                                        <div class="mixi_portfolio_overlay">
+                                            <div class="overflow_hover_text">
+                                                <h2 style="font-size: 50px"><a href="chi-tiet-mon-an/{{ $food->id }}">{{ $food->name }}</a></h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                @endforeach
+
+                                @foreach ($foods_meat as $food)
+                                <div class="col-md-4 mix cat2 no-padding">
+                                    <div class="single_mixi_portfolio">
+                                        <img src="adminAssets/img/hinh_mon_an/{{ $food->image }}" />
+                                        <div class="mixi_portfolio_overlay">
+                                            <div class="overflow_hover_text">
+                                                <h2 style="font-size: 50px"><a href="chi-tiet-mon-an/{{ $food->id }}">{{ $food->name }}</a></h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                @endforeach
+
+                                @foreach ($foods_xao as $food)
+                                <div class="col-md-4 mix cat3 no-padding">
+                                    <div class="single_mixi_portfolio">
+                                        <img src="adminAssets/img/hinh_mon_an/{{ $food->image }}" />
+                                        <div class="mixi_portfolio_overlay">
+                                            <div class="overflow_hover_text">
+                                                <h2 style="font-size: 50px"><a href="chi-tiet-mon-an/{{ $food->id }}">{{ $food->name }}</a></h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                @endforeach
+
+                                @foreach ($foods_rice as $food)
+                                <div class="col-md-4 mix cat4 no-padding">
+                                    <div class="single_mixi_portfolio">
+                                        <img src="adminAssets/img/hinh_mon_an/{{ $food->image }}" />
+                                        <div class="mixi_portfolio_overlay">
+                                            <div class="overflow_hover_text">
+                                                <h2 style="font-size: 50px"><a href="chi-tiet-mon-an/{{ $food->id }}">{{ $food->name }}</a></h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                @endforeach
+
+                                @foreach ($foods_desert as $food)
+                                <div class="col-md-4 mix cat5 no-padding">
+                                    <div class="single_mixi_portfolio">
+                                        <img src="adminAssets/img/hinh_mon_an/{{ $food->image }}" />
+                                        <div class="mixi_portfolio_overlay">
+                                            <div class="overflow_hover_text">
+                                                <h2 style="font-size: 50px"><a href="chi-tiet-mon-an/{{ $food->id }}">{{ $food->name }}</a></h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                @endforeach
+
+                                @foreach ($foods_top as $food)
+                                <div class="col-md-4 mix cat6 no-padding">
+                                    <div class="single_mixi_portfolio">
+                                        <img src="adminAssets/img/hinh_mon_an/{{ $food->image }}" />
+                                        <div class="mixi_portfolio_overlay">
+                                            <div class="overflow_hover_text">
+                                               <h2 style="font-size: 50px"><a href="chi-tiet-mon-an/{{ $food->id }}">{{ $food->name }}</a></h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                @endforeach
+
+                                <div class="portfolio_btn_area">
+                                    <a href="{{ route('DanhSachTatCaMonAn') }}" class="btn btn-md">Xem thêm</a>
+                                </div>
+
+                                <div class="gap"></div>
+                            </div>
+                        </div>                     
+                    </div>
+                </div>
         </section>
         </section>
+
+
 
        <!-- ============ Our Bread  ============= -->
 
@@ -270,7 +283,7 @@
 		
 		<section id="portfolio" class="portfolio">
         <div class="portfolio_btn_area">
-            <a href="" class="btn btn-md">Xem thêm</a>
+            <a href="{{ route('DanhSachTatCaCacNuoc') }}" class="btn btn-md">Xem thêm</a>
         </div>
         <div class="gap"></div>
     	</section>

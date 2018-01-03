@@ -3,7 +3,8 @@
 
     <head>
         <meta charset="UTF-8">
-        <title>WorldFOOD</title>
+        <title>@yield ('title')</title>
+        <base href="{{ asset('') }}">
         <link rel="stylesheet" href="resAssets/css/normalize.css">
         <link rel="stylesheet" href="resAssets/css/main.css" media="screen" type="text/css">
         <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
@@ -40,12 +41,12 @@
 
         @include ('res.layout.footer')
 
-
+        
         <script type="text/javascript" src="resAssets/js/jquery-1.10.2.min.js"> </script>
         <script type="text/javascript" src="resAssets/js/bootstrap.min.js" ></script>
         <script type="text/javascript" src="resAssets/js/jquery-1.10.2.js"></script>     
         <script type="text/javascript" src="resAssets/js/jquery.mixitup.min.js" ></script>
-        <script type="text/javascript" src="resAssets/js/main.js" ></script>
+        <!-- <script type="text/javascript" src="resAssets/js/main.js" ></script> -->
 
         <script src="resAssets/assets/js/jquery.easypiechart.min.js"></script>
         <script src="resAssets/assets/js/jquery.mixitup.min.js"></script>
@@ -56,6 +57,8 @@
 
         <script src="resAssets/assets/js/plugins.js"></script>
         <script src="resAssets/assets/js/main.js"></script>
+        
+        @yield ('script')
 
     </body>
 </html>

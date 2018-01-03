@@ -11,10 +11,25 @@
 |
 */
 
-#================================== ADMIN ====================================
+#================================= FRONTEND ==================================
 
 Route::get('/', 'ResController@getTrangChu')->name('home');
-
+Route::get('cac-mon-an', [
+	'as'   => 'DanhSachTatCaMonAn',
+	'uses' => 'ResController@getDanhSachTatCaMonAn'
+]);
+Route::get('cac-nuoc', [
+	'as'   => 'DanhSachTatCaCacNuoc',
+	'uses' => 'ResController@getDanhSachTatCaCacNuoc'
+]);
+Route::get('mon-an-theo-nuoc/{id}', [
+	'as'   => 'DanhSachMonAnTheoNuoc',
+	'uses' => 'ResController@getDanhSachMonAnTheoNuoc'
+]);
+Route::get('chi-tiet-mon-an/{id}', [
+	'as'   => 'ChiTietMonAn',
+	'uses' => 'ResController@getChiTietMonAn'
+]);
 
 
 #================================== ADMIN ====================================

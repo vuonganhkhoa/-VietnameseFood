@@ -10,18 +10,20 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#">WorldFOOD</a>
+                        <a class="navbar-brand" href="./">WorldFOOD</a>
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav main-nav  clear navbar-right ">
-                            <li><a class="navactive color_animation" href="#top">Trang chủ</a></li>
-                            <li><a class="color_animation" href="#story">Giới thiệu</a></li>
-                            <li><a class="color_animation" href="#pricing">Món ăn</a></li>
-                            <li><a class="color_animation" href="#beer">Thế giới</a></li>
-                            <li><a class="color_animation" href="#contact">Liên hệ</a></li>
-                            <li><a class="color_animation" href="{{ route('login') }}">Đăng nhập</a></li>
+
+                            <li><a class="navactive color_animation" href="index.php#top">Trang chủ</a></li>
+                            <li><a class="color_animation" href="index.php#story">Giới thiệu</a></li>
+                            <li><a class="color_animation" href="cac-mon-an">Món ăn</a></li>
+                            <li><a class="color_animation" href="cac-nuoc">Thế giới</a></li>
+                            <li><a class="color_animation" href="index.php#contact">Liên hệ</a></li>
+                            <li><a class="color_animation" href="dangnhap">Đăng nhập</a></li>
+
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div>
