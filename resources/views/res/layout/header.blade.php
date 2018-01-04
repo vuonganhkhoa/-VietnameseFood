@@ -23,6 +23,13 @@
                             <li><a class="color_animation" href="cac-nuoc">Thế giới</a></li>
                             <li><a class="color_animation" href="index.php#contact">Liên hệ</a></li>
                             <li><a class="color_animation" href="dangnhap">Đăng nhập</a></li>
+                            <li>
+                                <form action="timkiem" method="GET">
+                                    <span class="icon"><i class="fa fa-search"></i></span>
+                                    <input class="color_animation" type="text" name="key" placeholder="Tìm kiếm...">
+                                </form>
+                            </li>
+                            
 
                         </ul>
                     </div><!-- /.navbar-collapse -->

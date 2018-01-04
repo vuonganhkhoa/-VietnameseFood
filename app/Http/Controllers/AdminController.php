@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Food;
 use Auth;
 
 class AdminController extends Controller
@@ -43,4 +44,6 @@ class AdminController extends Controller
         $user = User::find($id);
         return view('admin.page.welcome', compact('user'));
     }
+
+
 }

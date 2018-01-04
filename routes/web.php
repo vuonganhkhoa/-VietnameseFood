@@ -26,10 +26,11 @@ Route::get('mon-an-theo-nuoc/{id}', [
 	'as'   => 'DanhSachMonAnTheoNuoc',
 	'uses' => 'ResController@getDanhSachMonAnTheoNuoc'
 ]);
-Route::get('chi-tiet-mon-an/{id}', [
+Route::get('chi-tiet-mon-an/{url}', [
 	'as'   => 'ChiTietMonAn',
 	'uses' => 'ResController@getChiTietMonAn'
 ]);
+Route::get('timkiem', 'ResController@getTimKiem')->name('search');
 
 
 #================================== ADMIN ====================================

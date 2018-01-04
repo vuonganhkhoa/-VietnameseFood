@@ -6,6 +6,12 @@
 	<div class="text-content container">
 		<div class="col-md-12">
 			<h1>Các món ăn</h1>
+			@if (!empty($key))
+				<h2 style="margin-top: 10px; font-weight: lighter;">
+					Tìm thấy <span style="color: red;">{{ $count }}</span> kết quả phù hợp với từ khóa: 
+					<span style="color: red;"> {{ "$key" }}</span>
+				</h2>
+			@endif
 			<div class="fa fa-cutlery fa-2x"></div>
 			<div id="mixcontent" class="mixcontent">
 
@@ -15,17 +21,19 @@
 						<img src="adminAssets/img/hinh_mon_an/{{ $food->image }}" />
 						<div class="mixi_portfolio_overlay">
 							<div class="overflow_hover_text">
-								<h2 style="font-size: 50px"><a href="chi-tiet-mon-an/{{ $food->id }}">{{ $food->name }}</a></h2>
+								<h2 style="font-size: 50px"><a href="chi-tiet-mon-an/{{ $food->PageUrl->url }}">{{ $food->name }}</a></h2>
 							</div>
 						</div>
 					</div>
 				</div>
 				@endforeach
 
-				{{ $foods->links() }}
+				
 
 			</div>
+
 		</div>
+		{{ $foods->appends(request()->input())->links() }}
 	</section>
 
 @endsection

@@ -15,7 +15,6 @@
         <link rel="stylesheet" href="resAssets/css/jquery-ui.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="resAssets/css/font-awesome.min.css" rel="stylesheet">
-        <link rel="icon" href="favicon-1.ico" type="image/x-icon">
 
         <!--For Plugins external css-->
         <link rel="stylesheet" href="resAssets/assets/css/teamslide.css" />
@@ -28,8 +27,9 @@
         <link rel="stylesheet" href="resAssets/assets/css/responsive.css" />
         <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 
-
         <script src="resAssets/assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <link rel="stylesheet" href="resAssets/assets/css/my.css" />
+        @yield ('style')
 
     </head>
 

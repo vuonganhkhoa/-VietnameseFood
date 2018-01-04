@@ -38,7 +38,7 @@
 						<img src="adminAssets/img/hinh_mon_an/{{ $food->image }}" />
 						<div class="mixi_portfolio_overlay">
 							<div class="overflow_hover_text">
-								<h2 style="font-size: 50px"><a href="chi-tiet-mon-an/{{ $food->id }}">{{ $food->name }}</a></h2>
+								<h2 style="font-size: 50px"><a href="chi-tiet-mon-an/{{ $food->PageUrl->url }}">{{ $food->name }}</a></h2>
 							</div>
 						</div>
 					</div>
