@@ -321,7 +321,8 @@
                             <!-- Form Area -->
                             <div class="contact-form">
                                 <!-- Form -->
-                                <form id="contact-us" method="post" action="contact.php">
+                                <form id="contact-us" method="POST" action="lienhe">
+                                {{ csrf_field() }}
                                     <!-- Left Inputs -->
                                     <div class="col-md-6 ">
                                         <!-- Name -->

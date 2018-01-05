@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Food;
 use App\FoodCountry;
 use App\PageUrl;
+use App\Comment;
+use Mail;
 
 class ResController extends Controller
 {
@@ -41,16 +43,47 @@ class ResController extends Controller
 
     public function getChiTietMonAn($url){
 
-        $res = PageUrl::select('id')->where('url', '=', $url)->first();
-        $id = $res->id;
-    	$food = Food::where('id_url', $id)->first();
-        return view('res.page.chi_tiet_mon_an', compact('food'));
+        $_url = PageUrl::where('url', '=', $url)->first();
+        $id_url = $_url->id;
+    	$food = Food::where('id_url', $id_url)->first();
+        $id_food = $food->id;
+        $comment = Comment::where('id_food', $id_food)->get();
+        $count = count($comment);
+        return view('res.page.chi_tiet_mon_an', compact('food', 'comment', 'count'));
     }
 
     public function getTimKiem(Request $request){
+
         $key = $request->key;
         $foods = Food::with('PageUrl')->where('name', 'LIKE', '%'.$key.'%')->paginate(6);
         $count = Food::where('name', 'LIKE', '%'.$key.'%')->count();
         return view('res.page.cac_mon_an', compact('foods', 'key', 'count'));
+    }
+
+    public function postLienHe(Request $request){
+
+        Mail::send('res.page.send_email', ['HoTen'=>$request->HoTen, 'NoiDung'=>$request->NoiDung], function ($message) use($request)
+        {
+            $message->from('mail.technologystore96@gmail.com', 'WorldFOOD');
+            $message->to($request->Email,$request->HoTen);
+            $message->subject('Cảm ơn bạn đã đặt câu hỏi cho chúng tôi.');
+        });
+        echo "<script>
+   
+            alert('Cảm ơn bạn đã góp ý. Chúng tôi sẽ liên lạc với bạn trong thời gian sớm nhất.');
+            window.location='".url('./')."'
+
+            </script>";
+    }
+
+    public function postBinhLuan(Request $request, $idFood){
+
+        $comment = new Comment;
+        $comment->id_food = $idFood;
+        $comment->name = $request->TenNguoiBinhLuan;
+        $comment->comment = $request->NoiDungBinhLuan;
+        $comment->date = date('Y-m-d');
+        $comment->save();
+        return redirect()->back(); 
     }
 }

@@ -31,6 +31,8 @@ Route::get('chi-tiet-mon-an/{url}', [
 	'uses' => 'ResController@getChiTietMonAn'
 ]);
 Route::get('timkiem', 'ResController@getTimKiem')->name('search');
+Route::post('lienhe', 'ResController@postLienHe');
+Route::post('binhluan/{idFood}', 'ResController@postBinhLuan');
 
 
 #================================== ADMIN ====================================

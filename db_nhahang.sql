@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 03, 2018 lúc 06:24 PM
+-- Thời gian đã tạo: Th1 05, 2018 lúc 08:37 AM
 -- Phiên bản máy phục vụ: 10.1.28-MariaDB
 -- Phiên bản PHP: 7.1.10
 
@@ -91,6 +91,7 @@ INSERT INTO `bill_detail` (`id_bill`, `id_food`, `quantity`, `price`) VALUES
 CREATE TABLE `comment` (
   `id` int(11) NOT NULL,
   `id_food` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
   `comment` text NOT NULL,
   `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -99,8 +100,10 @@ CREATE TABLE `comment` (
 -- Đang đổ dữ liệu cho bảng `comment`
 --
 
-INSERT INTO `comment` (`id`, `id_food`, `comment`, `date`) VALUES
-(1, 1, 'Ngon', '2017-12-31');
+INSERT INTO `comment` (`id`, `id_food`, `name`, `comment`, `date`) VALUES
+(1, 1, 'Hùng', 'Ngon', '2017-12-31'),
+(2, 135, 'Nguyễn Văn Linh', 'Hay', '2018-01-05'),
+(3, 135, 'Văn Đồng', 'Khá', '2018-01-05');
 
 -- --------------------------------------------------------
 
@@ -861,7 +864,7 @@ ALTER TABLE `bills`
 -- AUTO_INCREMENT cho bảng `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `customers`

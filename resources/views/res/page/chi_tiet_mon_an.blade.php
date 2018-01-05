@@ -1,32 +1,11 @@
 @extends ('res.layout.master')
 @section ('title', 'Chi tiết món ăn')
-@section ('style')
-<style type="text/css" media="screen">
-	h2, h3, h4{
-		text-align: left;
-	}
-	.desc-text h1{
-		font-size: 50px;
-		width: 100%;
-		border-width: 0px
-	}		
-	.desc-text p{
-		font-size: 22px;
-		text-align: left;
-		text-align: justify;
-	}
-	.nguyenlieu{
-		margin-left: 130px
-	}
-</style>
-@endsection
 @section ('content')
 
-<section class="description_content chitiet">
+<section class="description_content nguyenlieu">
 	<div class="container"> 
 		<div class="col-md-6">
 			<h1>{{ $food->name }}</h1>
-			<div style="margin-top: 50px"></div>
 			<div class="desc-text nguyenlieu">{!! $food->summary !!}</div>
 		</div>
 		<div class="col-md-6">
@@ -42,23 +21,72 @@
 		</div>
 	</div>
 </section>
-<section class="description_content chitiet">
-            <div class="bread background_content" style="background-image: url('resAssets/images/pricing.jpg') !important;">
-                <h1 >Chi tiết món ăn</h1>
-            </div>
-            <div class="container"> 
-                <div class="col-md-12">
-                	<div class="col-md-2"></div>
-                	<div class="col-md-8">
-	                    <div style="margin-top: 20px"></div>
-	                    <div class="desc-text">{!! $food->detail !!}</div>
-                	</div>
-                    
-                </div>
-            </div>
-        </section>
 
-        <div style="margin-bottom: 50px"></div>
+<section class="description_content chitiet">
+	<div class="bread background_content" style="background-image: url('resAssets/images/pricing.jpg') !important;">
+		<h1 >Chi tiết món ăn</h1>
+	</div>
+	<div class="container"> 
+		<div class="col-md-12">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<div class="desc-text">{!! $food->detail !!}</div>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+<section class="description_content binhluan">
+	<div class="container"> 
+		<div class="col-md-12">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<h2>Bình luận ({{ $count }})</h2>
+				@if (isset($comment))
+				@foreach ($comment as $com)
+				<div class="row">
+					<div class="col-md-12">
+						<div class="noidungbinhluan">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+								<strong>{{ $com->name }}</strong> <span class="text-muted">{{ date('d/m/Y', strtotime($com->date)) }}</span>
+								</div>
+								<div class="panel-body">
+								{{ $com->comment }}
+								</div><!-- /panel-body -->
+							</div>
+						</div>		
+					</div>
+				</div>
+				@endforeach
+				@endif
+			</div>
+		</div>
+		<div class="col-md-12">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<form action="binhluan/{{ $food->id }}" method="POST">
+					<input type="hidden" name="_token" value="{{csrf_token()}}">
+					<h2></h2>
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="form-group">
+								<input type="text" class="form-control input-md" placeholder="Họ tên" name="TenNguoiBinhLuan" required>
+							</div>
+						</div>
+						<div class="col-sm-12">
+							<div class="form-group">
+								<textarea class="form-control" placeholder="Bạn nghĩ gì về món ăn này?" rows="5" name="NoiDungBinhLuan" required></textarea>
+							</div>
+						</div>
+					</div>
+					<button type="submit" class="btn btn-default ">Đăng</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
 
 @endsection
 @section ('script')
