@@ -2,7 +2,7 @@
 @section ('title', 'Chi tiết món ăn')
 @section ('content')
 
-<section class="description_content nguyenlieu">
+<section class="description_content">
 	<div class="container"> 
 		<div class="col-md-6">
 			<h1>{{ $food->name }}</h1>
@@ -22,7 +22,7 @@
 	</div>
 </section>
 
-<section class="description_content chitiet">
+<section class="description_content">
 	<div class="bread background_content" style="background-image: url('resAssets/images/pricing.jpg') !important;">
 		<h1 >Chi tiết món ăn</h1>
 	</div>
@@ -30,7 +30,7 @@
 		<div class="col-md-12">
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
-				<div class="desc-text">{!! $food->detail !!}</div>
+				<div class="desc-text chitiet">{!! $food->detail !!}</div>
 			</div>
 
 		</div>
@@ -47,7 +47,7 @@
 				@foreach ($comment as $com)
 				<div class="row">
 					<div class="col-md-12">
-						<div class="noidungbinhluan">
+						<div class="binhluan">
 							<div class="panel panel-default">
 								<div class="panel-heading">
 								<strong>{{ $com->name }}</strong> <span class="text-muted">{{ date('d/m/Y', strtotime($com->date)) }}</span>

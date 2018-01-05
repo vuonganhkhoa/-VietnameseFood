@@ -26,9 +26,6 @@
 .desc-text h2, h3, h4{
     text-align: left;
 }
-.desc-text{
-    margin-top: 50px;
-}
 .desc-text h1{
     font-size: 50px;
     width: 100%;
@@ -39,9 +36,15 @@
     text-align: left;
     text-align: justify;
 }
+
 .nguyenlieu{
-    margin-left: 130px
+    margin-top: 50px;
+    margin-left: 130px;
 }
+.chitiet{
+    margin-top: 50px
+}
+
 .binhluan{
     margin: 20px 0px;
     text-align: left;
