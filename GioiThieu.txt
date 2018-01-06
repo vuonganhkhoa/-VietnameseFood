@@ -1,0 +1,25 @@
+﻿ĐỒ ÁN CUỐI KHOÁ
+
+Vương Anh Khoa - 0906482639 - vuonganhkhoa96@gmail.com
+PHP 15/08/2017
+
+Website về giới thiệu các món ăn trên khắp thế giới.
+Chức năng chính:
+- Admin:
+	Đăng nhập/đăng xuất.
+	Thêm, xóa, sửa và xem danh sách các món ăn, loại món ăn,...
+	Các admin thì ko được xóa admin khác trừ khi đăng nhập bằng quyền 'superadmin'.
+- Client:
+	Xem thông tin về các món ăn.
+	Tìm kiếm tên các món ăn.
+	Bình luận về các món ăn đó.
+	Gửi mail nếu có ý kiến, thắc mắc.
+
+Username: hagiang
+Password: 123456
+Username: admin hoặc admin@gmail.com (quyền superadmin)
+Password: 123456
+
+Em xin gửi lời cảm ơn chân thành đến cô Hương và cả trung tâm Khoa Phạm. ^^
+
+	
